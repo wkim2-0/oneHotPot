@@ -1,0 +1,158 @@
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('fonts/CenturyGothic/centurygothic.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('fonts/CenturyGothic/centurygothic_bold.ttf') format('ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('fonts/Ubuntu/Ubuntu-Bold.ttf') format('ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+:root {
+    --color-main: rgb(255, 170, 57); 
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Century Gothic";
+    font-weight: normal;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.header {
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    background-color: #000;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 1);
+}
+
+.header__logo {
+    height: 100%;
+}
+
+.hamburger {
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: var(--color-main);
+    border-radius: 10px;
+}
+
+
+
+.promo {
+    position: relative;
+    min-height: 100vh;
+    background-color: rgb(22, 12, 2);
+    /* background-repeat: no-repeat;
+    background-size: 110%;
+    background-position: center 100%;  */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 30%;
+}
+
+.promo::after {
+    content: "";
+    /* background-color: rgba(0, 0, 0, .2); */
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-image: url(img/giphy.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.3;
+}
+
+.promo__logo {
+    height: 25vh;
+}
+
+.promo__logo img {
+    object-fit: contain;
+}
+
+.promo__content {
+    z-index: 1;
+    text-align: center;
+
+}
+
+h1 {
+    color: var(--color-main);
+    font-size: 44px;
+    margin: 0;
+}
+
+.promo__descr {
+    color: #fff;
+}
+
+.promo__descr span {
+    color: var(--color-main);
+    font-weight: bold;
+}
+
+.promo__img img{
+    /* transform: scale(1.1); */
+}
+
+
+
+.btn {
+    background-color: var(--color-main);
+    width: 200px;
+    margin: 0 auto;
+    font-size: 20px;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 20px;
+    z-index: 1;
+}
