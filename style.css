@@ -23,6 +23,7 @@
 
 :root {
     --color-main: rgb(255, 170, 57); 
+    --color-second: rgb(0, 49, 63);
 }
 
 html {
@@ -40,16 +41,43 @@ body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    background-color: #000;
+    background-color: #0f0801;
+    color: #fff;
+}
+
+.container {
+    width: 100%;
+    padding: 0 10px;
 }
 
 img {
     height: 100%;
     width: 100%;
+    vertical-align: bottom;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.visibility-hidden {
+    visibility: hidden;
 }
 
 
 
+/* Header */
 .header {
     position: fixed;
     height: 50px;
@@ -58,17 +86,80 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 10;
-    background-color: #000;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 1);
+    z-index: 2;
+    transition: all 0.4s;
+}
+
+.header_show {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+    background-color: rgb(22, 12, 2);
+}
+
+.header__promo {
+    top: 0;
+    position: absolute;
 }
 
 .header__logo {
-    height: 100%;
+    height: 45px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-duration: .4s;
 }
 
+
+/* Блок с городами */
+.city {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.city__img {
+    height: 15px;
+}
+
+.city__img img {
+    vertical-align: top;
+}
+
+.city__name {
+    color: var(--color-main);
+    font-size: 10px;
+}
+
+.city__side-menu {
+    height: auto;
+    justify-content: end;
+}
+
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    z-index: 4;
+    transition: all .6s;
+    visibility: hidden;
+}
+
+.overlay_show {
+    opacity: .8;
+    visibility: visible;
+}
+
+
+
+/* Боковая панель */
 .hamburger {
-    height: 20px;
+    height: 17px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -76,37 +167,145 @@ img {
 
 .hamburger span {
     display: block;
-    width: 30px;
-    height: 2px;
+    width: 25px;
+    height: 1.5px;
     background-color: var(--color-main);
     border-radius: 10px;
+    transition: all .3s;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+}
+
+.side-menu__wrap {
+    background-color: var(--color-second);
+    position: absolute;
+    height: 97%;
+    width: 97%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+    padding: 15px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 1);
+}
+
+.side-menu__close {
+    position: absolute;
+    right: 15px;
+    font-size: 20px;
+    color: var(--color-main);
+}
+
+.side-menu__header {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.side-menu__logo {
+    height: 60px;
+    width: 60px;
+}
+
+.side-menu__logo img {
+    object-fit: contain;
+}
+
+.side-menu__header-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.side-menu__phone {
+    font-size: 14px;
+    color: var(--color-main);
+}
+
+.nav li{
+    font-size: 28px;
+    margin: 10px 0;
 }
 
 
 
+/* Фиксированная кнопка снизу */
+.btn-fixed {
+    position: fixed;
+    bottom: 0px;
+    z-index: 2;
+    width: 100%;
+    animation-duration: .3s;
+}
+
+
+
+/* Кнопки */
+.btn {
+    width: 250px;
+    margin: 0 auto;
+    font-size: 20px;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 25px;
+    border: 3px solid var(--color-main);
+    color: var(--color-main);
+    z-index: 1;
+}
+
+.btn__side-menu {
+    font-size: 10px;
+    width: 120px;
+    padding: 5px 0;
+    border: 1px solid var(--color-main);
+    margin: 0;
+}
+
+.btn__fixed {
+    width: 90%;
+    /* left: 50%;
+    transform: translateX(-50%); */
+    background-color: var(--color-second);
+    color: #fff;
+    border: none;
+    padding: 15px 0;
+    margin: 0 auto 20px auto;
+    font-size: 22px;
+}
+
+
+
+/* Section promo */
 .promo {
     position: relative;
-    min-height: 100vh;
     background-color: rgb(22, 12, 2);
-    /* background-repeat: no-repeat;
-    background-size: 110%;
-    background-position: center 100%;  */
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
 /*     justify-content: space-between; */
     gap: 30px;
+=======
+    gap: 40px;
+>>>>>>> 6a5b2e5 (0.2)
     padding-top: 60px;
 }
 
 .promo::after {
     content: "";
-    /* background-color: rgba(0, 0, 0, .2); */
     position: absolute;
     height: 100%;
     width: 100%;
     left: 0;
     top: 0;
-    background-image: url(img/giphy.gif);
+    background-image: url(img/giphy_1.gif);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -142,19 +341,69 @@ h1 {
     font-weight: bold;
 }
 
-.promo__img img{
-    /* transform: scale(1.1); */
+
+
+/* Заголовки */
+.title {
+    text-transform: uppercase;
+    color: var(--color-main);
 }
 
 
 
-.btn {
-    background-color: var(--color-main);
-    width: 200px;
-    margin: 0 auto;
-    font-size: 20px;
-    padding: 10px 0;
-    text-align: center;
-    border-radius: 20px;
+/* Section current */
+.current {
+    padding: 80px 0;
+    background-color: #0f0801;
+}
+
+.current__img {
+    height: 200px;
+    padding: 0 10px;
+    position: relative;
+}
+
+.current__img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .3)
+}
+
+.current__img img {
+    object-fit: cover;
+    object-position: 50% 25%;
+}
+
+
+
+/* Section menu */
+.menu__item {
+    display: block;
+    position: relative;
+}
+
+.menu__item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .3)
+}
+
+.menu__name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 34px;
+    font-weight: bold;
+    text-transform: uppercase;
     z-index: 1;
 }

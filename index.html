@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>One Hot Pot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="header">
-        <div class="header__logo">
-            <!-- <img src="icons/logo.svg" alt="logo"> -->
+        <div class="city">
+            <div class="city__img">
+                <img src="icons/location.svg" alt="location">
+            </div>
+            <a href="#" class="city__name">Владивосток</a>
         </div>
+        <a href="#" class="header__logo visibility-hidden animate__animated">
+            <img src="icons/logo.svg" alt="logo">
+        </a>
         <div class="hamburger">
             <span></span>
             <span></span>
@@ -19,8 +26,57 @@
     </header>
 
     <main>
+        <div class="overlay"></div>
+
+        <div class="side-menu visibility-hidden animate__animated">
+            <div class="side-menu__wrap ">
+                <div class="side-menu__close">✖</div>
+                <div class="side-menu__header">
+                    <div class="side-menu__logo">
+                        <img src="icons/logo.svg" alt="logo">
+                    </div>
+                    <div class="side-menu__header-bottom">
+                        <a class="side-menu__phone">+7(999)999-99-99</a>
+                        <div class="btn btn__side-menu">Забронировать стол</div>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="">О нас</a></li>
+                        <li><a href="">Акции и новинки</a></li>
+                        <li><a href="">Меню</a></li>
+                        <li><a href="">Вакансии</a></li>
+                        <li><a href="">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="city city__side-menu">
+                    <div class="city__img">
+                        <img src="icons/location.svg" alt="location">
+                    </div>
+                    <a href="#" class="city__name">Владивосток</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-fixed visibility-hidden animate__animated">
+            <div class="btn btn__fixed ">Забронировать стол</div>
+        </div>
+        
+
         <section class="promo">
-            
+            <!-- <div class="header header__promo">
+                <div class="city">
+                    <div class="city__img">
+                        <img src="icons/location.svg" alt="location">
+                    </div>
+                    <a href="#" class="city__name">Владивосток</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div> -->
             <div class="promo__content">
                 <!-- <h1>ONE HOT POT</h1> -->
                 <div class="promo__logo">
@@ -35,15 +91,39 @@
                 
             </div>
             <div class="btn">
-                Заказать столик
+                Забронировать стол
             </div>
             <div class="promo__img">
                 <img src="img/promo.png" alt="promo">
             </div>
-            <!-- <div class="promo__smoke">
-                <img src="img/giphy.gif" alt="smoke">
-            </div> -->
+        </section>
+
+        <section class="current">
+            <div class="container">
+                <!-- <div class="current__img">
+                    <img src="img/current.jpg" alt="">
+                </div> -->
+                <h2 class="title">акции и новинки</h2>
+                <p>В разработке</p>
+            </div>
+            
+        </section>
+
+        <section class="menu">
+            <a href="" class="menu__item">
+                <img src="img/menu.jpg" alt="">
+                <div class="menu__name">lunches</div>
+            </a>
+            <a href="" class="menu__item">
+                <img src="img/menu2.jpg" alt="">
+                <div class="menu__name">dinners</div>
+            </a>
+            <a href="" class="menu__item">
+                <img src="img/menu3.jpg" alt="">
+                <div class="menu__name">dessert</div>
+            </a>
         </section>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
