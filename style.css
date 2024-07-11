@@ -1,23 +1,31 @@
 @font-face {
-    font-family: 'Century Gothic';
-    src: url('fonts/CenturyGothic/centurygothic.ttf') format('ttf');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'Century Gothic';
+	src: url('fonts/CenturyGothic/CenturyGothic.eot');
+	src: local('Century Gothic'), local('CenturyGothic'),
+		url('fonts/CenturyGothic/CenturyGothic.eot?#iefix') format('embedded-opentype'),
+		url('fonts/CenturyGothic/CenturyGothic.woff') format('woff'),
+		url('fonts/CenturyGothic/CenturyGothic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'Century Gothic';
-    src: url('fonts/CenturyGothic/centurygothic_bold.ttf') format('ttf');
-    font-weight: bold;
-    font-style: normal;
+	font-family: 'Century Gothic';
+	src: url('fonts/CenturyGothic/CenturyGothic-Bold.eot');
+	src: local('Century Gothic Bold'), local('CenturyGothic-Bold'),
+		url('fonts/CenturyGothic/CenturyGothic-Bold.eot?#iefix') format('embedded-opentype'),
+		url('fonts/CenturyGothic/CenturyGothic-Bold.woff') format('woff'),
+		url('fonts/CenturyGothic/CenturyGothic-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
 }
 
-@font-face {
+/* @font-face {
     font-family: 'Ubuntu';
     src: url('fonts/Ubuntu/Ubuntu-Bold.ttf') format('ttf');
     font-weight: bold;
     font-style: normal;
-}
+} */
 
 
 
@@ -41,7 +49,7 @@ body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    background-color: #0f0801;
+    background-color: rgb(22, 12, 2);
     color: #fff;
 }
 
@@ -73,6 +81,34 @@ ul {
 
 .visibility-hidden {
     visibility: hidden;
+}
+
+
+
+/* Скролл */
+::-webkit-scrollbar {
+	width:6px;
+	height:6px;
+	max-width:6px;
+	max-height:6px;
+	background-color:rgb(22, 12, 2);
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius:6px;
+	max-width:6px;
+	max-height:6px;
+	height:6px;
+	background-color: var(--color-main);
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow:inset 0 0 6px rgba(0, 0, 0, 0.2);
+	border-radius:5px;
+	max-width:6px;
+	max-height:6px;
+	height:6px;
+	background-color:rgb(22, 12, 2);
 }
 
 
@@ -111,10 +147,10 @@ ul {
 
 /* Блок с городами */
 .city {
-    height: 100%;
+    /* height: 100%; */
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 2px;
 }
 
 .city__img {
@@ -127,7 +163,7 @@ ul {
 
 .city__name {
     color: var(--color-main);
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .city__side-menu {
@@ -146,13 +182,23 @@ ul {
     background-color: #000;
     opacity: 0;
     z-index: 4;
-    transition: all .6s;
+    transition: all .3s;
     visibility: hidden;
 }
 
 .overlay_show {
     opacity: .8;
     visibility: visible;
+}
+
+
+
+/* Крестик */
+.close {
+    position: absolute;
+    right: 15px;
+    font-size: 20px;
+    color: var(--color-main);
 }
 
 
@@ -181,6 +227,7 @@ ul {
     width: 100%;
     height: 100vh;
     z-index: 5;
+    animation-duration: .5s;
 }
 
 .side-menu__wrap {
@@ -196,15 +243,7 @@ ul {
     box-shadow: 0 10px 10px rgba(0, 0, 0, 1);
 }
 
-.side-menu__close {
-    position: absolute;
-    right: 15px;
-    font-size: 20px;
-    color: var(--color-main);
-}
-
 .side-menu__header {
-    height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -212,8 +251,9 @@ ul {
 }
 
 .side-menu__logo {
-    height: 60px;
-    width: 60px;
+    height: 100px;
+    width: 100px;
+    margin-bottom: 20px;
 }
 
 .side-menu__logo img {
@@ -233,6 +273,44 @@ ul {
 .nav li{
     font-size: 28px;
     margin: 10px 0;
+}
+
+
+
+/* City-popup */
+.city-popup {
+    position: fixed;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-second);
+    padding: 15px;
+    width: 97%;
+    border-radius: 15px;
+    z-index: 10;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+}
+
+.city-popup__title {
+    color: var(--color-main);
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.city-popup__items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.city-popup_show {
+    opacity: 1;
+    visibility: visible;
 }
 
 
@@ -262,9 +340,9 @@ ul {
 }
 
 .btn__side-menu {
-    font-size: 10px;
-    width: 120px;
-    padding: 5px 0;
+    font-size: 14px;
+    width: 170px;
+    padding: 10px 0;
     border: 1px solid var(--color-main);
     margin: 0;
 }
@@ -289,12 +367,7 @@ ul {
     background-color: rgb(22, 12, 2);
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
-/*     justify-content: space-between; */
-    gap: 30px;
-=======
     gap: 40px;
->>>>>>> 6a5b2e5 (0.2)
     padding-top: 60px;
 }
 

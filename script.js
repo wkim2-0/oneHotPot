@@ -1,5 +1,7 @@
 const overlay = document.querySelector('.overlay');
 
+
+
 //Шапка и фиксированная кнопка
 window.addEventListener('scroll', () => {
     const promo = document.querySelector('.promo');
@@ -27,6 +29,8 @@ window.addEventListener('scroll', () => {
     };
 });
 
+
+
 //боковое меню
 const menu = document.querySelector('.side-menu');
 
@@ -37,9 +41,28 @@ document.querySelector('.hamburger').addEventListener('click', () => {
     document.body.classList.add('overflow-hidden');
 })
 
-document.querySelector('.side-menu__close').addEventListener('click', () => {
-    menu.classList.remove('animate__slideInRight');  
-    menu.classList.add('animate__slideOutRight');
+document.querySelectorAll('.side-menu .close, .city__side-menu, .nav').forEach(item => {
+    item.addEventListener('click', () => {
+        menu.classList.remove('animate__slideInRight');  
+        menu.classList.add('animate__slideOutRight');
+        overlay.classList.remove('overlay_show');
+        document.body.classList.remove('overflow-hidden');
+    })
+})
+
+
+
+//Выбор города
+document.querySelectorAll('.city').forEach(item => {
+    item.addEventListener('click', () => {
+        document.querySelector('.city-popup').classList.toggle('city-popup_show');
+        overlay.classList.add('overlay_show');
+        document.body.classList.add('overflow-hidden');
+    })
+})
+
+document.querySelector('.city-popup .close').addEventListener('click', () => {
+    document.querySelector('.city-popup').classList.toggle('city-popup_show');
     overlay.classList.remove('overlay_show');
     document.body.classList.remove('overflow-hidden');
 })
