@@ -155,6 +155,7 @@ ul {
 
 .city__img {
     height: 15px;
+    width: 15px;
 }
 
 .city__img img {
@@ -240,7 +241,7 @@ ul {
     transform: translate(-50%, -50%);
     border-radius: 25px;
     padding: 15px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 1);
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 1);
 }
 
 .side-menu__header {
@@ -288,7 +289,7 @@ ul {
     width: 97%;
     border-radius: 15px;
     z-index: 10;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 1);
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 1);
     opacity: 0;
     visibility: hidden;
     transition: all .3s;
@@ -348,15 +349,17 @@ ul {
 }
 
 .btn__fixed {
-    width: 90%;
+    width: 50px;
     /* left: 50%;
     transform: translateX(-50%); */
     background-color: var(--color-second);
     color: #fff;
     border: none;
-    padding: 15px 0;
-    margin: 0 auto 20px auto;
+    padding: 10px;
+    margin: 0 0 20px 15px;
     font-size: 22px;
+    border-radius: 50%;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 1);
 }
 
 
@@ -479,4 +482,45 @@ h1 {
     font-weight: bold;
     text-transform: uppercase;
     z-index: 1;
+}
+
+
+
+/* Footer */
+.footer {
+ padding: 30px 10px;
+ /* color: var(--color-main); */
+}
+.footer__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-main);
+    margin-bottom: 10px;
+}
+
+.footer__logo {
+    height: 70px;
+    width: 70px;
+}
+
+.footer__mail {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.footer__phone {
+    display: block;
+}
+
+.footer__line {
+    height: 1px;
+    background-color: var(--color-main);
+}
+
+.policy {
+    color: #5f4b4b;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
 }
